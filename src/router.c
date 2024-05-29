@@ -1,8 +1,10 @@
+#include <unistd.h>
 #include "./router.h"
 #include <stdio.h>
 #include <string.h>
 
 #define MAX_ROUTES 100
+#define BUFFER_SIZE 1024
 
 typedef struct {
     char path[256];
