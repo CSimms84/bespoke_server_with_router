@@ -2,6 +2,7 @@
 #include "./server.h"
 #include "./router.h"
 #include "./tcp_server.h"
+#include "./packet_sniffer.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -24,8 +25,13 @@ void* run_tcp_server(void* arg) {
     return NULL;
 }
 
+void* run_packet_sniffer(void* arg) {
+    start_packet_sniffer();
+    return NULL;
+}
+
 int main() {
-    pthread_t http_thread, tcp_thread;
+    pthread_t http_thread, tcp_thread, sniffer_thread;
 
     // Start the HTTP server in a new thread
     if (pthread_create(&http_thread, NULL, run_http_server, NULL) != 0) {
@@ -39,10 +45,16 @@ int main() {
         return 1;
     }
 
-    // Wait for both threads to finish
+    // Start the packet sniffer in a new thread
+    if (pthread_create(&sniffer_thread, NULL, run_packet_sniffer, NULL) != 0) {
+        perror("Failed to create packet sniffer thread");
+        return 1;
+    }
+
+    // Wait for all threads to finish
     pthread_join(http_thread, NULL);
     pthread_join(tcp_thread, NULL);
+    pthread_join(sniffer_thread, NULL);
 
     return 0;
 }
-

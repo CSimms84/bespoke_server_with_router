@@ -153,6 +153,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/packet_sniffer.o: src/packet_sniffer.c.o
+.PHONY : src/packet_sniffer.o
+
+# target to build an object file
+src/packet_sniffer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/packet_sniffer.c.o
+.PHONY : src/packet_sniffer.c.o
+
+src/packet_sniffer.i: src/packet_sniffer.c.i
+.PHONY : src/packet_sniffer.i
+
+# target to preprocess a source file
+src/packet_sniffer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/packet_sniffer.c.i
+.PHONY : src/packet_sniffer.c.i
+
+src/packet_sniffer.s: src/packet_sniffer.c.s
+.PHONY : src/packet_sniffer.s
+
+# target to generate assembly for a file
+src/packet_sniffer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/packet_sniffer.c.s
+.PHONY : src/packet_sniffer.c.s
+
 src/router.o: src/router.c.o
 .PHONY : src/router.o
 
@@ -237,6 +261,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/packet_sniffer.o"
+	@echo "... src/packet_sniffer.i"
+	@echo "... src/packet_sniffer.s"
 	@echo "... src/router.o"
 	@echo "... src/router.i"
 	@echo "... src/router.s"

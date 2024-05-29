@@ -4,7 +4,7 @@
 # compile C with /Library/Developer/CommandLineTools/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/charlie/bespoke_server_with_router/include
+C_INCLUDES = -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include
 
 C_FLAGSarm64 = -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
 
