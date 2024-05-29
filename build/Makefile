@@ -201,6 +201,30 @@ src/server.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/server.c.s
 .PHONY : src/server.c.s
 
+src/tcp_server.o: src/tcp_server.c.o
+.PHONY : src/tcp_server.o
+
+# target to build an object file
+src/tcp_server.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/tcp_server.c.o
+.PHONY : src/tcp_server.c.o
+
+src/tcp_server.i: src/tcp_server.c.i
+.PHONY : src/tcp_server.i
+
+# target to preprocess a source file
+src/tcp_server.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/tcp_server.c.i
+.PHONY : src/tcp_server.c.i
+
+src/tcp_server.s: src/tcp_server.c.s
+.PHONY : src/tcp_server.s
+
+# target to generate assembly for a file
+src/tcp_server.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/tcp_server.c.s
+.PHONY : src/tcp_server.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... src/server.o"
 	@echo "... src/server.i"
 	@echo "... src/server.s"
+	@echo "... src/tcp_server.o"
+	@echo "... src/tcp_server.i"
+	@echo "... src/tcp_server.s"
 .PHONY : help
 
 

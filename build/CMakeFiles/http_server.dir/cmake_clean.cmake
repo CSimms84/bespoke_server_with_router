@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/http_server.dir/src/router.c.o.d"
   "CMakeFiles/http_server.dir/src/server.c.o"
   "CMakeFiles/http_server.dir/src/server.c.o.d"
+  "CMakeFiles/http_server.dir/src/tcp_server.c.o"
+  "CMakeFiles/http_server.dir/src/tcp_server.c.o.d"
   "http_server"
   "http_server.pdb"
 )
