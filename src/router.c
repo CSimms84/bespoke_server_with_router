@@ -1,8 +1,10 @@
+#include <unistd.h>
 #include "./router.h"
 #include <stdio.h>
 #include <string.h>
 
 #define MAX_ROUTES 100
+#define BUFFER_SIZE 1024
 
 typedef struct {
     char path[256];
@@ -34,6 +36,11 @@ void handle_request(int client_socket) {
             return;
         }
     }
+
+    // Default 404 response
+    const char *response = "HTTP/1.1 404 Not Found\r\n\r\n";
+    write(client_socket, response, strlen(response));
+}
 
     // Default 404 response
     const char *response = "HTTP/1.1 404 Not Found\r\n\r\n";
