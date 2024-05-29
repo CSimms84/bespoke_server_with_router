@@ -1,7 +1,7 @@
 # TCP & HTTP Server in C
 
 ## Overview
-This is a simple HTTP server written in C with custom routing functionality.
+This is a simple TCP & HTTP server written in C with custom routing functionality.
 
 ## Installation
 ```sh
