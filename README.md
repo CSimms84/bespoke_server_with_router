@@ -1,4 +1,4 @@
-# HTTP Server in C
+# TCP & HTTP Server in C
 
 ## Overview
 This is a simple HTTP server written in C with custom routing functionality.
