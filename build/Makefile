@@ -129,25 +129,12 @@ http_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/build
 .PHONY : http_server/fast
 
-#=============================================================================
-# Target rules for targets named dns_server
-
-# Build rule for target.
-dns_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dns_server
-.PHONY : dns_server
-
-# fast build rule for target.
-dns_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dns_server.dir/build.make CMakeFiles/dns_server.dir/build
-.PHONY : dns_server/fast
-
 src/dns_server.o: src/dns_server.c.o
 .PHONY : src/dns_server.o
 
 # target to build an object file
 src/dns_server.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dns_server.dir/build.make CMakeFiles/dns_server.dir/src/dns_server.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/dns_server.c.o
 .PHONY : src/dns_server.c.o
 
 src/dns_server.i: src/dns_server.c.i
@@ -155,7 +142,7 @@ src/dns_server.i: src/dns_server.c.i
 
 # target to preprocess a source file
 src/dns_server.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dns_server.dir/build.make CMakeFiles/dns_server.dir/src/dns_server.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/dns_server.c.i
 .PHONY : src/dns_server.c.i
 
 src/dns_server.s: src/dns_server.c.s
@@ -163,7 +150,7 @@ src/dns_server.s: src/dns_server.c.s
 
 # target to generate assembly for a file
 src/dns_server.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dns_server.dir/build.make CMakeFiles/dns_server.dir/src/dns_server.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/dns_server.c.s
 .PHONY : src/dns_server.c.s
 
 src/main.o: src/main.c.o
@@ -294,7 +281,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... dns_server"
 	@echo "... http_server"
 	@echo "... src/dns_server.o"
 	@echo "... src/dns_server.i"

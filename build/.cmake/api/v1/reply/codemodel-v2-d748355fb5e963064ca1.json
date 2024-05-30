@@ -15,8 +15,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -31,8 +30,7 @@
 					"name" : "http_server",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -40,15 +38,8 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "dns_server::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-dns_server-Debug-b2f8a7d7cbca1965ac5f.json",
-					"name" : "dns_server",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
 					"id" : "http_server::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-http_server-Debug-9c26e72f1bac65b5a956.json",
+					"jsonFile" : "target-http_server-Debug-d28e654d60c768484863.json",
 					"name" : "http_server",
 					"projectIndex" : 0
 				}

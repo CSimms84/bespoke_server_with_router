@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/charlie/bespoke_server_with_router/src/dns_server.c" "CMakeFiles/http_server.dir/src/dns_server.c.o" "gcc" "CMakeFiles/http_server.dir/src/dns_server.c.o.d"
   "/Users/charlie/bespoke_server_with_router/src/main.c" "CMakeFiles/http_server.dir/src/main.c.o" "gcc" "CMakeFiles/http_server.dir/src/main.c.o.d"
   "/Users/charlie/bespoke_server_with_router/src/packet_sniffer.c" "CMakeFiles/http_server.dir/src/packet_sniffer.c.o" "gcc" "CMakeFiles/http_server.dir/src/packet_sniffer.c.o.d"
   "/Users/charlie/bespoke_server_with_router/src/router.c" "CMakeFiles/http_server.dir/src/router.c.o" "gcc" "CMakeFiles/http_server.dir/src/router.c.o.d"

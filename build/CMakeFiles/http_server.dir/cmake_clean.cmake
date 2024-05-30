@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/http_server.dir/src/dns_server.c.o"
+  "CMakeFiles/http_server.dir/src/dns_server.c.o.d"
   "CMakeFiles/http_server.dir/src/main.c.o"
   "CMakeFiles/http_server.dir/src/main.c.o.d"
   "CMakeFiles/http_server.dir/src/packet_sniffer.c.o"

@@ -31,8 +31,8 @@
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/dns_server.dir/src/dns_server.c.o -c /Users/charlie/bespoke_server_with_router/src/dns_server.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/dns_server.c.o -c /Users/charlie/bespoke_server_with_router/src/dns_server.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/dns_server.c",
-  "output": "CMakeFiles/dns_server.dir/src/dns_server.c.o"
+  "output": "CMakeFiles/http_server.dir/src/dns_server.c.o"
 }
 ]

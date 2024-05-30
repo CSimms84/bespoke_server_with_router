@@ -31,12 +31,6 @@ void* run_packet_sniffer(void* arg) {
     return NULL;
 }
 
-void* run_dns_server(void* arg) {
-    extern int start_dns_server();  // Declare the start_dns_server function from dns_server.c
-    start_dns_server();
-    return NULL;
-}
-
 int main() {
     pthread_t http_thread, tcp_thread, sniffer_thread, dns_thread;
 
