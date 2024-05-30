@@ -3,6 +3,7 @@
 #include "./router.h"
 #include "./tcp_server.h"
 #include "./packet_sniffer.h"
+#include "./dns_server.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,8 +31,14 @@ void* run_packet_sniffer(void* arg) {
     return NULL;
 }
 
+void* run_dns_server(void* arg) {
+    extern int start_dns_server();  // Declare the start_dns_server function from dns_server.c
+    start_dns_server();
+    return NULL;
+}
+
 int main() {
-    pthread_t http_thread, tcp_thread, sniffer_thread;
+    pthread_t http_thread, tcp_thread, sniffer_thread, dns_thread;
 
     // Start the HTTP server in a new thread
     if (pthread_create(&http_thread, NULL, run_http_server, NULL) != 0) {
@@ -51,10 +58,17 @@ int main() {
         return 1;
     }
 
+    // Start the DNS server in a new thread
+    if (pthread_create(&dns_thread, NULL, run_dns_server, NULL) != 0) {
+        perror("Failed to create DNS server thread");
+        return 1;
+    }
+
     // Wait for all threads to finish
     pthread_join(http_thread, NULL);
     pthread_join(tcp_thread, NULL);
     pthread_join(sniffer_thread, NULL);
+    pthread_join(dns_thread, NULL);
 
     return 0;
 }

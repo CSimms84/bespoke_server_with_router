@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <arpa/inet.h>
-#include "../include/tcp_server.h"
+#include "./tcp_server.h"
 
 #define BUFFER_SIZE 1024
 

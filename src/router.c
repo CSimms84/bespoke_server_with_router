@@ -41,8 +41,3 @@ void handle_request(int client_socket) {
     const char *response = "HTTP/1.1 404 Not Found\r\n\r\n";
     write(client_socket, response, strlen(response));
 }
-
-    // Default 404 response
-    const char *response = "HTTP/1.1 404 Not Found\r\n\r\n";
-    write(client_socket, response, strlen(response));
-}

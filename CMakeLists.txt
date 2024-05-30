@@ -14,3 +14,5 @@ include_directories(${PCAP_INCLUDE_DIRS})
 
 add_executable(http_server src/main.c src/server.c src/router.c src/tcp_server.c src/packet_sniffer.c)
 target_link_libraries(http_server ${PCAP_LIBRARIES})
+
+add_executable(dns_server src/dns_server.c)
