@@ -110,6 +110,7 @@ int start_dns_server() {
             perror("Receive failed");
             continue;
         }
+        printf("Received DNS query\n");
         handle_query(sock, &client, buffer, n);
     }
 
