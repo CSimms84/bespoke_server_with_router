@@ -18,15 +18,15 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Updated to the latest version
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4  # Updated to the latest version
       with:
         python-version: '3.x'
 
     - name: Cache CMake
-      uses: actions/cache@v2
+      uses: actions/cache@v3  # Updated to the latest version
       with:
         path: |
           ~/.cmake
@@ -35,11 +35,15 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-cmake-
 
-    - name: Install CMake on Linux and macOS
-      if: matrix.os != 'windows-latest'
+    - name: Install CMake on Linux
+      if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update || true
         sudo apt-get install -y cmake
+
+    - name: Install CMake on macOS
+      if: matrix.os == 'macos-latest'
+      run: brew install cmake
 
     - name: Install CMake on Windows
       if: matrix.os == 'windows-latest'
