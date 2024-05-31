@@ -10,21 +10,23 @@
 #define BUFFER_SIZE 512
 
 struct DNSHeader {
-    unsigned short id;
-    unsigned char rd :1;
-    unsigned char tc :1;
-    unsigned char aa :1;
-    unsigned char opcode :4;
-    unsigned char qr :1;
-    unsigned char rcode :4;
-    unsigned char cd :1;
-    unsigned char ad :1;
-    unsigned char z :1;
-    unsigned char ra :1;
-    unsigned short q_count;
-    unsigned short ans_count;
-    unsigned short auth_count;
-    unsigned short add_count;
+    unsigned short id; // identification number
+    unsigned char rd :1; // recursion desired
+    unsigned char tc :1; // truncated message
+    unsigned char aa :1; // authoritative answer
+    unsigned char opcode :4; // purpose of message
+    unsigned char qr :1; // query/response flag
+
+    unsigned char rcode :4; // response code
+    unsigned char cd :1; // checking disabled
+    unsigned char ad :1; // authenticated data
+    unsigned char z :1; // its z! reserved
+    unsigned char ra :1; // recursion available
+
+    unsigned short q_count; // number of question entries
+    unsigned short ans_count; // number of answer entries
+    unsigned short auth_count; // number of authority entries
+    unsigned short add_count; // number of resource entries
 };
 
 struct Question {
@@ -41,19 +43,8 @@ struct ResourceRecord {
 
 void handle_query(int sock, struct sockaddr_in *client, unsigned char *buffer, int length) {
     struct DNSHeader *dns = (struct DNSHeader *) buffer;
-    dns->qr = 1; // Response
-    dns->opcode = 0; // Standard query
-    dns->aa = 1; // Authoritative answer
-    dns->rcode = 0; // No error
-
-    unsigned char *qname = (unsigned char *) (buffer + sizeof(struct DNSHeader));
-    unsigned char *reader = qname;
-
-    while (*reader != 0) {
-        reader++;
-    }
-
-    struct Question *qinfo = (struct Question *) (reader + 1);
+    unsigned char *qname = buffer + sizeof(struct DNSHeader);
+    struct Question *qinfo = (struct Question *) (qname + strlen((const char*)qname) + 1);
 
     unsigned char response[BUFFER_SIZE];
     memset(response, 0, BUFFER_SIZE);
@@ -61,13 +52,23 @@ void handle_query(int sock, struct sockaddr_in *client, unsigned char *buffer, i
     struct DNSHeader *dns_res = (struct DNSHeader *) response;
     memcpy(dns_res, dns, sizeof(struct DNSHeader));
 
+    dns_res->qr = 1; // Response
+    dns_res->opcode = 0; // Standard query
+    dns_res->aa = 1; // Authoritative answer
+    dns_res->rcode = 0; // No error
     dns_res->q_count = htons(1);
     dns_res->ans_count = htons(1);
+    dns_res->auth_count = 0;
+    dns_res->add_count = 0;
 
     unsigned char *response_name = response + sizeof(struct DNSHeader);
-    memcpy(response_name, qname, reader - qname + 1);
+    strcpy((char*)response_name, (char*)qname);
 
-    struct ResourceRecord *rr = (struct ResourceRecord *) (response_name + (reader - qname + 1) + sizeof(struct Question));
+    struct Question *qinfo_res = (struct Question *) (response_name + strlen((const char*)response_name) + 1);
+    qinfo_res->qtype = qinfo->qtype;
+    qinfo_res->qclass = qinfo->qclass;
+
+    struct ResourceRecord *rr = (struct ResourceRecord *) (response_name + strlen((const char*)response_name) + 1 + sizeof(struct Question));
     rr->type = htons(1); // A record
     rr->_class = htons(1); // IN class
     rr->ttl = htonl(3600); // TTL
@@ -79,7 +80,8 @@ void handle_query(int sock, struct sockaddr_in *client, unsigned char *buffer, i
     rdata[2] = 0;
     rdata[3] = 1;
 
-    sendto(sock, response, sizeof(struct DNSHeader) + (reader - qname + 1) + sizeof(struct Question) + sizeof(struct ResourceRecord) + rr->data_len, 0, (struct sockaddr *) client, sizeof(struct sockaddr_in));
+    int response_size = sizeof(struct DNSHeader) + (strlen((const char*)response_name) + 1) + sizeof(struct Question) + sizeof(struct ResourceRecord) + 4;
+    sendto(sock, response, response_size, 0, (struct sockaddr *) client, sizeof(struct sockaddr_in));
 }
 
 int start_dns_server() {
@@ -102,6 +104,8 @@ int start_dns_server() {
         close(sock);
         exit(EXIT_FAILURE);
     }
+
+    printf("DNS server started on port %d\n", DNS_PORT);
 
     while (1) {
         socklen_t len = sizeof(client);
