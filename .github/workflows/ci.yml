@@ -20,16 +20,30 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up CMake
-      uses: actions/setup-cmake@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-    - name: Set up environment on Windows
-      if: matrix.os == 'windows-latest'
+    - name: Cache CMake
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cmake
+          ~/.cache/pip
+        key: ${{ runner.os }}-cmake-${{ hashFiles('**/CMakeLists.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-cmake-
+
+    - name: Install CMake on Linux and macOS
+      if: matrix.os != 'windows-latest'
       run: |
-        choco install make
-        choco install mingw
-        echo "::add-path::C:\ProgramData\chocolatey\bin"
-        echo "::add-path::C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin"
+        sudo apt-get update || true
+        sudo apt-get install -y cmake
+
+    - name: Install CMake on Windows
+      if: matrix.os == 'windows-latest'
+      run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' --yes
 
     - name: Create build directory
       run: mkdir build
