@@ -18,15 +18,18 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Updated to the latest version
+      uses: actions/checkout@v3
+      with:
+        node-version: '20'
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # Updated to the latest version
+      uses: actions/setup-python@v4
       with:
         python-version: '3.x'
+        node-version: '20'
 
     - name: Cache CMake
-      uses: actions/cache@v3  # Updated to the latest version
+      uses: actions/cache@v3
       with:
         path: |
           ~/.cmake
@@ -34,6 +37,7 @@ jobs:
         key: ${{ runner.os }}-cmake-${{ hashFiles('**/CMakeLists.txt') }}
         restore-keys: |
           ${{ runner.os }}-cmake-
+        node-version: '20'
 
     - name: Install CMake on Linux
       if: matrix.os == 'ubuntu-latest'
