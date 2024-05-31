@@ -49,6 +49,9 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' --yes
 
+    - name: Ensure clean build directory
+      run: rm -rf build
+
     - name: Create build directory
       run: mkdir build
 
