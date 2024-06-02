@@ -129,12 +129,26 @@ http_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/build
 .PHONY : http_server/fast
 
+#=============================================================================
+# Target rules for targets named run_tests
+
+# Build rule for target.
+run_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tests
+.PHONY : run_tests
+
+# fast build rule for target.
+run_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+.PHONY : run_tests/fast
+
 src/dns_server.o: src/dns_server.c.o
 .PHONY : src/dns_server.o
 
 # target to build an object file
 src/dns_server.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/dns_server.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/dns_server.c.o
 .PHONY : src/dns_server.c.o
 
 src/dns_server.i: src/dns_server.c.i
@@ -143,6 +157,7 @@ src/dns_server.i: src/dns_server.c.i
 # target to preprocess a source file
 src/dns_server.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/dns_server.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/dns_server.c.i
 .PHONY : src/dns_server.c.i
 
 src/dns_server.s: src/dns_server.c.s
@@ -151,6 +166,7 @@ src/dns_server.s: src/dns_server.c.s
 # target to generate assembly for a file
 src/dns_server.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/dns_server.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/dns_server.c.s
 .PHONY : src/dns_server.c.s
 
 src/main.o: src/main.c.o
@@ -207,6 +223,7 @@ src/router.o: src/router.c.o
 # target to build an object file
 src/router.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/router.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/router.c.o
 .PHONY : src/router.c.o
 
 src/router.i: src/router.c.i
@@ -215,6 +232,7 @@ src/router.i: src/router.c.i
 # target to preprocess a source file
 src/router.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/router.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/router.c.i
 .PHONY : src/router.c.i
 
 src/router.s: src/router.c.s
@@ -223,6 +241,7 @@ src/router.s: src/router.c.s
 # target to generate assembly for a file
 src/router.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/router.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/src/router.c.s
 .PHONY : src/router.c.s
 
 src/server.o: src/server.c.o
@@ -273,6 +292,30 @@ src/tcp_server.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/src/tcp_server.c.s
 .PHONY : src/tcp_server.c.s
 
+tests/test_main.o: tests/test_main.c.o
+.PHONY : tests/test_main.o
+
+# target to build an object file
+tests/test_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_main.c.o
+.PHONY : tests/test_main.c.o
+
+tests/test_main.i: tests/test_main.c.i
+.PHONY : tests/test_main.i
+
+# target to preprocess a source file
+tests/test_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_main.c.i
+.PHONY : tests/test_main.c.i
+
+tests/test_main.s: tests/test_main.c.s
+.PHONY : tests/test_main.s
+
+# target to generate assembly for a file
+tests/test_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_main.c.s
+.PHONY : tests/test_main.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +325,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... http_server"
+	@echo "... run_tests"
 	@echo "... src/dns_server.o"
 	@echo "... src/dns_server.i"
 	@echo "... src/dns_server.s"
@@ -300,6 +344,9 @@ help:
 	@echo "... src/tcp_server.o"
 	@echo "... src/tcp_server.i"
 	@echo "... src/tcp_server.s"
+	@echo "... tests/test_main.o"
+	@echo "... tests/test_main.i"
+	@echo "... tests/test_main.s"
 .PHONY : help
 
 

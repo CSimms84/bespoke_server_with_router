@@ -26,7 +26,7 @@ void handle_request(int client_socket) {
     char buffer[BUFFER_SIZE] = {0};
     read(client_socket, buffer, BUFFER_SIZE);
 
-    // Basic request parsing to get the path
+    // Basic request parsing to get the method and path
     char method[8], path[256];
     sscanf(buffer, "%s %s", method, path);
 
