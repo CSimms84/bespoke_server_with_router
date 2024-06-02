@@ -1138,6 +1138,18 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "CUNIT_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/opt/homebrew/lib/libcunit.dylib"
+		},
+		{
 			"name" : "CUnit_DIR",
 			"properties" : 
 			[
