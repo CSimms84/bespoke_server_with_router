@@ -47,11 +47,11 @@ CMakeFiles/http_server.dir/src/main.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/qos.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mach_port_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_sigset_t.h \
-  /Users/charlie/bespoke_server_with_router/include/./server.h \
-  /Users/charlie/bespoke_server_with_router/include/./router.h \
-  /Users/charlie/bespoke_server_with_router/include/./tcp_server.h \
-  /Users/charlie/bespoke_server_with_router/include/./packet_sniffer.h \
-  /Users/charlie/bespoke_server_with_router/include/./dns_server.h \
+  /Users/charlie/bespoke_server_with_router/src/../include/server.h \
+  /Users/charlie/bespoke_server_with_router/src/../include/router.h \
+  /Users/charlie/bespoke_server_with_router/src/../include/tcp_server.h \
+  /Users/charlie/bespoke_server_with_router/src/../include/packet_sniffer.h \
+  /Users/charlie/bespoke_server_with_router/src/../include/dns_server.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_va_list.h \

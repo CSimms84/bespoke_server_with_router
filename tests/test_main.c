@@ -1,7 +1,7 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-#include "router.h"
-#include "dns_server.h"
+#include "../include/router.h"
+#include "../include/dns_server.h"
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -57,6 +57,8 @@ void test_add_route() {
     read_from_pipe(fds[0], buffer, sizeof(buffer));
     close(fds[0]);
 
+    printf("Buffer contents: %s\n", buffer);
+
     CU_ASSERT_STRING_EQUAL(buffer, "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello, World!");
 }
 
@@ -81,6 +83,8 @@ void test_handle_request() {
     char buffer[1024];
     read_from_pipe(fds[0], buffer, sizeof(buffer));
     close(fds[0]);
+
+    printf("Buffer contents: %s\n", buffer);
 
     CU_ASSERT_STRING_EQUAL(buffer, "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello, World!");
 }

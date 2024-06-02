@@ -1,7 +1,7 @@
 CMakeFiles/http_server.dir/src/server.c.o: \
   /Users/charlie/bespoke_server_with_router/src/server.c \
-  /Users/charlie/bespoke_server_with_router/include/./server.h \
-  /Users/charlie/bespoke_server_with_router/include/./router.h \
+  /Users/charlie/bespoke_server_with_router/src/../include/server.h \
+  /Users/charlie/bespoke_server_with_router/src/../include/router.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/cdefs.h \

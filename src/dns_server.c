@@ -4,7 +4,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include "dns_server.h"
+#include "../include/dns_server.h"
 
 #define DNS_PORT 53
 #define BUFFER_SIZE 512

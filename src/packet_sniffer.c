@@ -2,7 +2,7 @@
 #include <pcap.h>
 #include <stdio.h>
 #include <arpa/inet.h>
-#include "./packet_sniffer.h"
+#include "../include/packet_sniffer.h"
 
 #define SNAP_LEN 1518
 #define SIZE_ETHERNET 14

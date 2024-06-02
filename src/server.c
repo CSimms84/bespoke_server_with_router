@@ -1,5 +1,5 @@
-#include "./server.h"
-#include "./router.h"
+#include "../include/server.h"
+#include "../include/router.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

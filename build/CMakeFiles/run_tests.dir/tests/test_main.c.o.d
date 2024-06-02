@@ -51,8 +51,8 @@ CMakeFiles/run_tests.dir/tests/test_main.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_off_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/secure/_stdio.h \
   /opt/homebrew/include/CUnit/Basic.h \
-  /Users/charlie/bespoke_server_with_router/include/router.h \
-  /Users/charlie/bespoke_server_with_router/include/dns_server.h \
+  /Users/charlie/bespoke_server_with_router/tests/../include/router.h \
+  /Users/charlie/bespoke_server_with_router/tests/../include/dns_server.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/unistd.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/unistd.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_posix_vdisable.h \

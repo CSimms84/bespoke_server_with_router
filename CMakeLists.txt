@@ -23,3 +23,5 @@ link_directories(/opt/homebrew/lib)
 # Add test target
 add_executable(run_tests tests/test_main.c src/router.c src/dns_server.c)
 target_link_libraries(run_tests ${CUNIT_LIBRARY} ${PCAP_LIBRARIES})
+
+set(CMAKE_BUILD_TYPE Debug)

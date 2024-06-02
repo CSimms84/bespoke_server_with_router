@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include "./router.h"
+#include "../include/router.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -26,9 +26,8 @@ void handle_request(int client_socket) {
     char buffer[BUFFER_SIZE] = {0};
     read(client_socket, buffer, BUFFER_SIZE);
 
-    // Basic request parsing to get the method and path
-    char method[8], path[256];
-    sscanf(buffer, "%s %s", method, path);
+    char *request = strtok(buffer, " ");
+    char *path = strtok(NULL, " ");
 
     for (int i = 0; i < route_count; i++) {
         if (strcmp(routes[i].path, path) == 0) {

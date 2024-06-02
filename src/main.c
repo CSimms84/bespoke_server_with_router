@@ -1,9 +1,9 @@
 #include <pthread.h>
-#include "./server.h"
-#include "./router.h"
-#include "./tcp_server.h"
-#include "./packet_sniffer.h"
-#include "./dns_server.h"
+#include "../include/server.h"
+#include "../include/router.h"
+#include "../include/tcp_server.h"
+#include "../include/packet_sniffer.h"
+#include "../include/dns_server.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
