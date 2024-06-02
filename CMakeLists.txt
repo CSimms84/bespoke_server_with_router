@@ -16,10 +16,10 @@ add_executable(http_server src/main.c src/server.c src/router.c src/tcp_server.c
 target_link_libraries(http_server ${PCAP_LIBRARIES})
 
 # Manually specify the CUnit paths
-include_directories(/opt/homebrew/include/CUnit)
+include_directories(/opt/homebrew/include)
 link_directories(/opt/homebrew/lib)
 find_library(CUNIT_LIBRARY cunit)
 
 # Add test target
 add_executable(run_tests tests/test_main.c src/router.c src/dns_server.c)
-target_link_libraries(run_tests ${PCAP_LIBRARIES} cunit)
+target_link_libraries(run_tests ${CUNIT_LIBRARY} ${PCAP_LIBRARIES})

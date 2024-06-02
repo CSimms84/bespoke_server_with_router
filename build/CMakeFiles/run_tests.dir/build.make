@@ -124,6 +124,7 @@ run_tests: CMakeFiles/run_tests.dir/tests/test_main.c.o
 run_tests: CMakeFiles/run_tests.dir/src/router.c.o
 run_tests: CMakeFiles/run_tests.dir/src/dns_server.c.o
 run_tests: CMakeFiles/run_tests.dir/build.make
+run_tests: /opt/homebrew/lib/libcunit.dylib
 run_tests: /opt/homebrew/opt/libpcap/lib/libpcap.dylib
 run_tests: CMakeFiles/run_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/charlie/bespoke_server_with_router/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable run_tests"
