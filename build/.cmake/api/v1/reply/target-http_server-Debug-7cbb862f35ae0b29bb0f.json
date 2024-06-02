@@ -76,10 +76,6 @@
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/opt/homebrew/include"
-				},
-				{
-					"backtrace" : 5,
 					"path" : "/opt/homebrew/include/CUnit"
 				}
 			],

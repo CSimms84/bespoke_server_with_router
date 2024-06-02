@@ -1,55 +1,55 @@
 [
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/main.c.o -c /Users/charlie/bespoke_server_with_router/src/main.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/main.c.o -c /Users/charlie/bespoke_server_with_router/src/main.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/main.c",
   "output": "CMakeFiles/http_server.dir/src/main.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/server.c.o -c /Users/charlie/bespoke_server_with_router/src/server.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/server.c.o -c /Users/charlie/bespoke_server_with_router/src/server.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/server.c",
   "output": "CMakeFiles/http_server.dir/src/server.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/router.c.o -c /Users/charlie/bespoke_server_with_router/src/router.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/router.c.o -c /Users/charlie/bespoke_server_with_router/src/router.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/router.c",
   "output": "CMakeFiles/http_server.dir/src/router.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/tcp_server.c.o -c /Users/charlie/bespoke_server_with_router/src/tcp_server.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/tcp_server.c.o -c /Users/charlie/bespoke_server_with_router/src/tcp_server.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/tcp_server.c",
   "output": "CMakeFiles/http_server.dir/src/tcp_server.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/packet_sniffer.c.o -c /Users/charlie/bespoke_server_with_router/src/packet_sniffer.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/packet_sniffer.c.o -c /Users/charlie/bespoke_server_with_router/src/packet_sniffer.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/packet_sniffer.c",
   "output": "CMakeFiles/http_server.dir/src/packet_sniffer.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/dns_server.c.o -c /Users/charlie/bespoke_server_with_router/src/dns_server.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/http_server.dir/src/dns_server.c.o -c /Users/charlie/bespoke_server_with_router/src/dns_server.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/dns_server.c",
   "output": "CMakeFiles/http_server.dir/src/dns_server.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/run_tests.dir/tests/test_main.c.o -c /Users/charlie/bespoke_server_with_router/tests/test_main.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/run_tests.dir/tests/test_main.c.o -c /Users/charlie/bespoke_server_with_router/tests/test_main.c",
   "file": "/Users/charlie/bespoke_server_with_router/tests/test_main.c",
   "output": "CMakeFiles/run_tests.dir/tests/test_main.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/run_tests.dir/src/router.c.o -c /Users/charlie/bespoke_server_with_router/src/router.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/run_tests.dir/src/router.c.o -c /Users/charlie/bespoke_server_with_router/src/router.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/router.c",
   "output": "CMakeFiles/run_tests.dir/src/router.c.o"
 },
 {
   "directory": "/Users/charlie/bespoke_server_with_router/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/run_tests.dir/src/dns_server.c.o -c /Users/charlie/bespoke_server_with_router/src/dns_server.c",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/charlie/bespoke_server_with_router/include -I/opt/homebrew/opt/libpcap/include -I/opt/homebrew/include/CUnit -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/run_tests.dir/src/dns_server.c.o -c /Users/charlie/bespoke_server_with_router/src/dns_server.c",
   "file": "/Users/charlie/bespoke_server_with_router/src/dns_server.c",
   "output": "CMakeFiles/run_tests.dir/src/dns_server.c.o"
 }

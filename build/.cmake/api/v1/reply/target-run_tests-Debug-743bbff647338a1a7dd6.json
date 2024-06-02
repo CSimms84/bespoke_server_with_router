@@ -83,10 +83,6 @@
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/opt/homebrew/include"
-				},
-				{
-					"backtrace" : 6,
 					"path" : "/opt/homebrew/include/CUnit"
 				}
 			],
