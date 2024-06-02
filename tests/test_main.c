@@ -67,7 +67,7 @@ void test_handle_request() {
 
 // Test case for DNS server
 void test_dns_server() {
-    // Since the DNS server runs indefinitely, we test the handler instead
+    // Since the DNS server runs indefinitely, I have to test the handler instead
     // Create a dummy DNS query
     unsigned char query[] = {
         0x12, 0x34, // ID
