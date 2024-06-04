@@ -35,18 +35,19 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-cmake-
 
-    - name: Install dependencies on Linux
+    - name: Install CMake on Linux
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update || true
-        sudo apt-get install -y cmake libcunit1 libcunit1-doc libcunit1-dev
+        sudo apt-get install -y cmake
 
-    - name: Install dependencies on macOS
+    - name: Install CMake on macOS
       if: matrix.os == 'macos-latest'
       run: |
-        brew install cmake libpcap cunit
+        brew install cmake
+        brew install libpcap
 
-    - name: Install dependencies on Windows
+    - name: Install CMake on Windows
       if: matrix.os == 'windows-latest'
       run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' --yes
 
