@@ -1,14 +1,7 @@
 #include <ctype.h>
+#include <pcap.h>
 #include <stdio.h>
-#include <string.h>
-#ifdef _WIN32
-#include <winsock2.h>
-#include <pcap.h>
-#else
 #include <arpa/inet.h>
-#include <pcap.h>
-#endif
-
 #include "../include/packet_sniffer.h"
 
 #define SNAP_LEN 1518
@@ -33,16 +26,16 @@ void print_hex_ascii_line(const u_char *payload, int len, int offset) {
 
     /* offset */
     printf("%05d   ", offset);
-
+    
     /* hex */
     ch = payload;
-    for (i = 0; i < len; i++) {
+    for(i = 0; i < len; i++) {
         printf("%02x ", *ch);
         ch++;
         if (i == 7)
             printf(" ");
     }
-
+    
     /* fill hex gap with spaces if not full line */
     if (len < 8)
         printf(" ");
@@ -53,17 +46,17 @@ void print_hex_ascii_line(const u_char *payload, int len, int offset) {
         }
     }
     printf("   ");
-
+    
     /* ascii (if printable) */
     ch = payload;
-    for (i = 0; i < len; i++) {
+    for(i = 0; i < len; i++) {
         if (isprint(*ch))
             printf("%c", *ch);
         else
             printf(".");
         ch++;
     }
-
+    
     printf("\n");
 }
 
@@ -82,7 +75,7 @@ void print_payload(const u_char *payload, int len) {
         return;
     }
 
-    for (;;) {
+    for ( ;; ) {
         line_len = line_width % len_rem;
         print_hex_ascii_line(ch, line_len, offset);
         len_rem = len_rem - line_len;
@@ -110,7 +103,7 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *pa
     printf("From: %s\n", inet_ntoa(ip->ip_src));
     printf("To: %s\n", inet_ntoa(ip->ip_dst));
     printf("Protocol: %d\n", ip->ip_p);
-
+    
     /* print packet content */
     printf("Payload:\n");
     print_payload(packet, header->caplen);

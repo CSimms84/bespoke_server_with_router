@@ -1,11 +1,4 @@
-#ifdef _WIN32
-#include <winsock2.h>
-#pragma comment(lib, "ws2_32.lib")
-#else
 #include <unistd.h>
-#include <arpa/inet.h>
-#endif
-
 #include "../include/router.h"
 #include <stdio.h>
 #include <string.h>
@@ -31,7 +24,7 @@ void add_route(const char *path, route_handler_t handler) {
 
 void handle_request(int client_socket) {
     char buffer[BUFFER_SIZE] = {0};
-    recv(client_socket, buffer, BUFFER_SIZE, 0);
+    read(client_socket, buffer, BUFFER_SIZE);
 
     char *request = strtok(buffer, " ");
     char *path = strtok(NULL, " ");
@@ -45,6 +38,5 @@ void handle_request(int client_socket) {
 
     // Default 404 response
     const char *response = "HTTP/1.1 404 Not Found\r\n\r\n";
-    send(client_socket, response, strlen(response), 0);
+    write(client_socket, response, strlen(response));
 }
-
