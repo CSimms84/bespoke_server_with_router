@@ -1,7 +1,17 @@
 #include <ctype.h>
-#include <pcap.h>
 #include <stdio.h>
+#include <string.h>
+#ifdef _WIN32
+#include <winsock2.h>
+#include <iphlpapi.h>
+#include <pcap.h>
+#pragma comment(lib, "wpcap.lib")
+#pragma comment(lib, "ws2_32.lib")
+#else
 #include <arpa/inet.h>
+#include <pcap.h>
+#endif
+
 #include "../include/packet_sniffer.h"
 
 #define SNAP_LEN 1518
@@ -114,6 +124,14 @@ void start_packet_sniffer() {
     pcap_if_t *alldevs, *d;
     pcap_t *handle;
 
+    #ifdef _WIN32
+        WSADATA wsaData;
+        if (WSAStartup(MAKEWORD(2,2), &wsaData) != 0) {
+            fprintf(stderr, "WSAStartup failed\n");
+            return;
+        }
+    #endif
+
     // Find all available devices
     if (pcap_findalldevs(&alldevs, errbuf) == -1) {
         fprintf(stderr, "Couldn't find default device: %s\n", errbuf);
@@ -145,4 +163,8 @@ void start_packet_sniffer() {
 
     pcap_close(handle);
     pcap_freealldevs(alldevs);
+
+    #ifdef _WIN32
+        WSACleanup();
+    #endif
 }

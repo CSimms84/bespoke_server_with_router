@@ -30,6 +30,8 @@ elseif(WIN32)
     message(STATUS "CUNIT_INCLUDE_DIRS: ${CUNIT_INCLUDE_DIRS}")
     find_library(CUNIT_LIBRARIES cunit)
     message(STATUS "CUNIT_LIBRARIES: ${CUNIT_LIBRARIES}")
+
+    set(WINDOWS_LIBS ws2_32 iphlpapi)
 endif()
 
 # Check if the required libraries and include directories are found
@@ -52,10 +54,10 @@ include_directories(${CUNIT_INCLUDE_DIRS})
 
 # Add the executable for the main server
 add_executable(http_server src/main.c src/server.c src/router.c src/tcp_server.c src/packet_sniffer.c src/dns_server.c)
-target_link_libraries(http_server ${PCAP_LIBRARIES})
+target_link_libraries(http_server ${PCAP_LIBRARIES} ${WINDOWS_LIBS})
 
 # Add test target
 add_executable(run_tests tests/test_main.c src/router.c src/dns_server.c)
-target_link_libraries(run_tests ${CUNIT_LIBRARIES} ${PCAP_LIBRARIES})
+target_link_libraries(run_tests ${CUNIT_LIBRARIES} ${PCAP_LIBRARIES} ${WINDOWS_LIBS})
 
 set(CMAKE_BUILD_TYPE Debug)
