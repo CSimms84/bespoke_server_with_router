@@ -25,12 +25,14 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Cache CMake
+    - name: Cache CMake and Dependencies
       uses: actions/cache@v4
       with:
         path: |
           ~/.cmake
           ~/.cache/pip
+          build
+          ${{ if matrix.os == 'windows-latest' }}C:\ProgramData\chocolatey\lib
         key: ${{ runner.os }}-cmake-${{ hashFiles('**/CMakeLists.txt') }}
         restore-keys: |
           ${{ runner.os }}-cmake-
