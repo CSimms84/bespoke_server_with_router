@@ -66,9 +66,15 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
         choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' --yes
+        choco install winpcap --yes --execution-timeout=3600
 
-    - name: Ensure clean build directory
+    - name: Ensure clean build directory (Linux and macOS)
+      if: matrix.os != 'windows-latest'
       run: rm -rf build
+
+    - name: Ensure clean build directory (Windows)
+      if: matrix.os == 'windows-latest'
+      run: Remove-Item -Recurse -Force build
 
     - name: Create build directory
       run: mkdir build
