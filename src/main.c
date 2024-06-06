@@ -5,6 +5,7 @@
 #include <arpa/inet.h>
 #ifdef _WIN32
 #include <windows.h>
+#include <winsock2.h>
 #else
 #include <pthread.h>
 #endif
@@ -62,6 +63,13 @@ void* run_packet_sniffer(void* arg) {
 
 int main() {
 #ifdef _WIN32
+    WSADATA wsaData;
+    int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
+    if (iResult != 0) {
+        printf("WSAStartup failed: %d\n", iResult);
+        return 1;
+    }
+
     HANDLE http_thread, tcp_thread, sniffer_thread, dns_thread;
 #else
     pthread_t http_thread, tcp_thread, sniffer_thread, dns_thread;
@@ -133,5 +141,8 @@ int main() {
     pthread_join(dns_thread, NULL);
 #endif
 
+#ifdef _WIN32
+    WSACleanup();
+#endif
     return 0;
 }
