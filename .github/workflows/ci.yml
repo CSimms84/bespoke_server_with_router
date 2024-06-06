@@ -63,7 +63,7 @@ jobs:
       working-directory: .
 
     - name: Build
-      run: cmake --build build
+      run: cmake --build build --parallel
       working-directory: .
 
     - name: Run tests
