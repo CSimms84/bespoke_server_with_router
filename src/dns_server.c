@@ -4,6 +4,16 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <unistd.h>
+
+#ifdef _WIN32
+#include <winsock2.h>
+#pragma comment(lib, "ws2_32.lib")
+#else
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#endif
+
 #include "../include/dns_server.h"
 
 #define DNS_PORT 53
@@ -89,6 +99,14 @@ int start_dns_server() {
     struct sockaddr_in server, client;
     unsigned char buffer[BUFFER_SIZE];
 
+#ifdef _WIN32
+    WSADATA wsa;
+    if (WSAStartup(MAKEWORD(2,2),&wsa) != 0) {
+        perror("WSAStartup failed");
+        exit(EXIT_FAILURE);
+    }
+#endif
+
     sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock < 0) {
         perror("Socket creation failed");
@@ -117,6 +135,10 @@ int start_dns_server() {
         printf("Received DNS query\n");
         handle_query(sock, &client, buffer, n);
     }
+
+#ifdef _WIN32
+    WSACleanup();
+#endif
 
     close(sock);
     return 0;
